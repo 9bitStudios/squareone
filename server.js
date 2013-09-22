@@ -13,7 +13,7 @@ var path = require('path');
 var server = express();
 
 //Static content 
-server.use(express.static(path.join( APPLICATION_ROOT, 'app')));
+server.use('/app', express.static(path.join( APPLICATION_ROOT, 'app')));
 
 //Show all errors in development
 server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
