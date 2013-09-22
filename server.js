@@ -19,7 +19,7 @@ server.use(express.static(path.join( APPLICATION_ROOT, 'app')));
 server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
 // Routes
-
+require('./api')(express,server);
 
 // Start server 
 
