@@ -18,8 +18,11 @@ server.use('/app', express.static(path.join( APPLICATION_ROOT, 'app')));
 //Show all errors in development
 server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
+// Database
+var database = require('./database')(express,server,mongoose);
+
 // Routes
-require('./api')(express,server);
+require('./api')(express,server, mongoose, database);
 
 // Start server 
 
